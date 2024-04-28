@@ -23,14 +23,14 @@ $parking = $_POST['parking'];
 $stories = $_POST['stories'];
 $basement = $_POST['basement'];
 $tax = $_POST['tax'];
-$image = $_FILES['image']['name']; 
+
+//Image upload to directory image
+$uploadDir = 'images/';
+$moveImage = $uploadDir . basename($_FILES['image']);
+move_uploaded_file($file['temp_name'], $moveImage);
 
 $sql = "INSERT INTO properties (address, city, state, zip, price, size, bedrooms, bathrooms, garden, parking, stories, basement, tax, image)
-        VALUES ('$address', '$city', '$state', '$zip', '$price', '$size', '$bedrooms', '$bathrooms', '$garden', '$parking', '$stories', '$basement', '$tax', '$image')";
-
-$target_dir = "images/";
-$target_file = $target_dir . basename($_FILES["image"]["name"]);
-move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+        VALUES ('$address', '$city', '$state', '$zip', '$price', '$size', '$bedrooms', '$bathrooms', '$garden', '$parking', '$stories', '$basement', '$tax', '$moveImage')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record inserted successfully!";
