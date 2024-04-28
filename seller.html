@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="stylesheet" href="seller.css">
+    <!-- google icon fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="seller.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <!-- potentially give user option to change and/or remove image -->
+            <div class="profile-image">
+                <img src="default.png" alt="default pfp image">
+                <h3>Welcome User!</h3>
+            </div>
+            <ul>
+                <li><a href="seller.html" class="home">
+                    <span class="icon"><i class="material-icons">home</i></span>
+                    <span class="item">Home</span>
+                </a></li>
+                <li><a href="#">
+                    <span class="icon"><i class="material-icons">space_dashboard</i></span>
+                    <span class="item">Seller Dashboard</span>
+                </a></li>
+                <li><a href="#">
+                    <span class="icon"><i class="material-icons">person</i></span>
+                    <span class="item">Profile</span>
+                </a></li>
+            </ul>
+        </div>
+        <div class="topbar">
+            <div class="nav">
+                <div class="menu">
+                    <a href="#" onclick="toggleMenu()"><i class="material-icons">menu</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addPropertyPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Add New Property</h2><br>
+            <h4>Please fill out the details below to add new property to your dashboard. When you are finished press submit.</h4><br>
+            <form id="addPropertyForm" method="post" action="add_property.php">
+                <label for="address">Street Address:</label>
+                <input type="text" id="address" name="address" required><br><br>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip" required><br><br>
+
+                <label for="price">Property Price:</label>
+                <input type="text" id="price" name="price" required><br><br>
+
+                <label for="size">Property Size in Square Feet:</label>
+                <input type="text" id="size" name="size" required> sq ft.<br><br>
+
+                <label for="bedrooms">Number of Bedrooms:</label>
+                <input type="text" id="bedrooms" name="bedrooms" required>
+                <label for="bathrooms">Number of Bathrooms:</label>
+                <input type="text" id="bathrooms" name="bathrooms" required><br><br>
+
+                <label for="garden">Does the property have a garden?</label>
+                <input type="radio" id="yes" name="garden" value="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="garden" value="no">
+                <label for="no">No</label><br><br>
+
+                <label for="parking">Property Parking Lot Size in Square Feet: (enter 0 if none)</label>
+                <input type="text" id="parking" name="parking" required> sq ft.<br><br>
+
+                <label for="stories">How many stories does the property have?</label>
+                <input type="text" id="stories" name="stories" required><br><br>
+
+                <label for="basement">Does the property have a basement?</label>
+                <input type="radio" id="yes" name="basement" value="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="basement" value="no">
+                <label for="no">No</label><br><br>
+
+                <label for="tax">What is the property tax?</label>
+                <input type="text" id="tax" name="tax" required><br><br>
+
+                <label for="image">Upload Image of Property:</label>
+                <input type="file" id="image" name="image" required><br><br>
+
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="add-property-button" onclick="openPopup()">
+        <i class="material-icons">add</i>
+        <span>Add New</span>
+    </div>
+
+</body>
+</html>
