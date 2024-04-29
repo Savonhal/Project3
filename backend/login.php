@@ -3,19 +3,8 @@
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
-$servername = "localhost";
-$username = "ktarafder1";
-$password = "ktarafder1";
-$dbname = "ktarafder1";
 
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db_conn.php';
 
 // Retrieve email and password from POST request
 $email = $_POST["email"];

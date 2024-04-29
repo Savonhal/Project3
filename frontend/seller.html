@@ -8,6 +8,8 @@
     <!-- google icon fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="seller.js"></script>
+    <script src="js/index.js"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -15,7 +17,7 @@
             <!-- potentially give user option to change and/or remove image -->
             <div class="profile-image">
                 <img src="default.png" alt="default pfp image">
-                <h3>Welcome User!</h3>
+
             </div>
             <ul>
                 <li><a href="seller.html" class="home">
@@ -39,6 +41,12 @@
                 </div>
             </div>
         </div>
+
+        <div id="content">
+            
+            
+        </div>
+
     </div>
 
     <div id="addPropertyPopup" class="popup">
@@ -46,7 +54,7 @@
             <span class="close" onclick="closePopup()">&times;</span>
             <h2>Add New Property</h2><br>
             <h4>Please fill out the details below to add new property to your dashboard. When you are finished press submit.</h4><br>
-            <form id="addPropertyForm" method="post" action="add_property.php" enctype="multipart/form-data">
+            <form id="addPropertyForm" method="post"  enctype="multipart/form-data">
                 <label for="address">Street Address:</label>
                 <input type="text" id="address" name="address" required><br><br>
 
@@ -92,7 +100,8 @@
                 <label for="image">Upload Image of Property:</label>
                 <input type="file" id="image" name="image" required><br><br>
 
-                <button type="submit" id="submit">Submit</button>
+                <button type="submit" id="submit" onclick="closePopup()">Submit</button>
+                <button type="reset" id="reset-button">Reset</button>
             </form>
         </div>
     </div>
@@ -101,8 +110,58 @@
         <i class="material-icons">add</i>
         <span>Add New</span>
     </div>
+    
+    <script>
+        console.log("hello");
 
-    <script src="frontend/js/index.js"></script>
+        var userName = getCookie("username");
+        console.log(userName);
+
+        var profile_imageDiv = document.querySelector(".profile-image");
+        profile_imageDiv.innerHTML += "<h3>Welcome " + userName + "</h3>";
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function fetchCards() {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            document.getElementById('content').innerHTML += xhr.responseText;
+                        } else {
+                            console.error('Error fetching properties: ' + xhr.status);
+                        }
+                    }
+                };
+                xhr.open('GET', 'get_property.php', true);
+                xhr.send();
+            }
+
+            fetchCards(); // Initial fetch of cards when the page loads
+            
+            document.getElementById('addPropertyForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            document.getElementById('content').innerHTML = "";
+                            fetchCards();
+                            closePopup();
+                            //document.getElementById('addCardModal').classList.remove('show');
+                            document.getElementById('addPropertyForm').reset();
+                        } else {
+                            console.error('Error adding card: ' + xhr.status);
+                        }
+                    }
+                };
+                xhr.open('POST', 'add_property.php', true);
+                xhr.send(formData);
+            });
+        });
+    </script>
 
 </body>
 </html>
