@@ -1,5 +1,5 @@
 <?php
-include '../backend/';
+include '../backend/db_conn.php';
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate and sanitize input
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare($sql);
     $params[] = $property_id; // Add property_id to the params array
     $types = str_repeat('s', count($params)); // Determine types for params
-    $types .= "i"; // Add type for property_id (integer)
+    //$types .= "i"; // Add type for property_id (integer)
     $stmt->bind_param($types, ...$params); // Use array for params and remove unpacking
 
     // Execute the statement
