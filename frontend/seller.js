@@ -9,3 +9,11 @@ function openPopup() {
 function closePopup() {
     document.getElementById("addPropertyPopup").style.display = "none";
 }
+
+function openDeletePopup() {
+    document.getElementById("deletePropertyPopup").style.display = "block";
+}
+
+function closeDeletePopup() {
+    document.getElementById("deletePropertyPopup").style.display = "none";
+}

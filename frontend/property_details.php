@@ -66,7 +66,7 @@
                             <br>
                             <p>Basement:".$property['basement']."</p>
                             <br>
-                            <p>Property Tax:".$property['tax']."</p>
+                            <p>Property Tax: $".$property['tax']."</p>
                         </div>
                         <div style='margin-left: 50px'>
                             <img style='height: 300px; width: 300px' src='" . $property['image'] . "' alt='Property Image'>
@@ -76,7 +76,7 @@
                     <!-- Edit and Delete buttons -->
                     <div class='property-details property-buttons' style='margin-left:220px;'>
                         <button id='edit-button' onclick='openPopup()'>Edit</button>
-                        <button id='delete-button' onclick='deleteProperty(" . $property['id'] . ")'>Delete</button>
+                        <button id='delete-button' onclick='openDeletePopup()'>Delete</button>
                     </div>
                 ";
     
@@ -138,6 +138,8 @@
 
 
     </div>
+
+    <!-- Edit Property Popup -->
     <div id="addPropertyPopup" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
@@ -190,8 +192,22 @@
                 <label for="image">Upload Image of Property:</label>
                 <input type="file" id="image" name="image" value="<?php echo $property['image'] ?>"><br><br>
 
-                <button type="submit" id="submit" onclick="closePopup()">Update Property</button>
+                <button style="background-color: #4CAF50;color:white" type="submit" id="submit" onclick="closePopup()">Update Property</button>
                 
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete property popup -->
+    <div id="deletePropertyPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeDeletePopup()">&times;</span>
+            <h2>Delete Property</h2><br>
+            <form id="delete-form" method="post"  enctype="multipart/form-data" action="delete_property.php">
+                <p>Are you sure you want to delete this property?</p>
+                <input type="hidden" name="property_id" value="<?php echo $property['id']; ?>">
+                <br>
+                <button id="delete-confirm" type="submit" id="submit" onclick="return confirm('Are you sure you want to delete this property?')">Delete Property</button>
             </form>
         </div>
     </div>
