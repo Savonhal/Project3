@@ -215,6 +215,8 @@ body.open .container .topbar {
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
+    border-color: orange;
+    border-style: solid;
 }
 
 #delete-button {
@@ -223,6 +225,8 @@ body.open .container .topbar {
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
+    border-color: red;
+    border-style: solid;
 }
 
 #delete-confirm {
