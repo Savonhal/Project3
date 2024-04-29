@@ -3,14 +3,9 @@
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
-$servername = "localhost";
-$username = "ktarafder1";
-$password = "ktarafder1";
-$dbname = "ktarafder1";
 
 
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+include 'db_conn.php';
 
 // Check connection
 if ($conn->connect_error) {
@@ -18,6 +13,8 @@ if ($conn->connect_error) {
     echo json_encode($response);
     exit();
 }
+
+
 
 
 header('Content-Type: application/json');

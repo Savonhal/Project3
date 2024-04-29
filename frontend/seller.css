@@ -20,6 +20,7 @@ body{
     height: 100%;
     padding: 25px 0;
     transition: all 0.5s ease;
+    z-index: 1;
 }
 
 .container .sidebar ul li a {
@@ -164,5 +165,63 @@ body.open .container .topbar {
     border-radius: 10px;
     cursor: pointer;
     margin-left: 40%;
+}
+
+#reset-button {
+   padding:5px;
+   border-radius: 10px;
+   margin-left:39%
+}
+
+#content{
+   
+   
+}
+
+.property-card {
+    display: inline-block; /* Ensure items are displayed in a row */
+    vertical-align: top; /* Align items at the top of their container */
+    margin-right: 20px; /* Add margin between items */
+    margin-top: 10px; 
+    margin-bottom: 30px; 
+    margin-left: 30px; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 0;
+}
+
+.property-card:hover{
+    transform: scale(1.05); /* Enlarge the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a box shadow on hover */
+}
+
+.property-details {
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.property-buttons {
+    display: flex;
+    justify-content: space-between;
+    width:220px;
+    margin-top: 10px;
+}
+
+#edit-button {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#delete-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 

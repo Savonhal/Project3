@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Save user information into cookie
                     document.cookie = "user_id=" + data.user_id + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
                     document.cookie = "username=" + data.username + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-                    window.location.href = "../seller.html";
+                    window.location.href = "../frontend/seller.html";
                 } else {
                     var errorMessage = document.getElementById("error-message");
                     errorMessage.innerText = data.message;
