@@ -25,7 +25,7 @@
                 margin-bottom: 30px; 
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)'
             >
-                <img src=\"" . $row['image'] . "\" alt=\"Image\" style=\"width: 50%; object-fit: contain\">
+                <img src=\"" . $row['image'] . "\" alt=\"Image\" style=\"max-width: 50%; object-fit: contain\">
                 <div>
                     <h3> $" . $row['price'] . "</h3>
                     <div>" . $row['bedrooms'] . " bd | ". $row['bathrooms']. "ba | " . $row['size'] . " sqft </div>

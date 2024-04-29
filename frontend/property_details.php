@@ -56,15 +56,15 @@
                             <h2>Property ID: " . $property['id'] . "</h2>
                             <h2>Price: $".$property['price']."</h2>
                             <br>
-                            <h3><div>" . $property['bedrooms'] . " bd | ". $property['bathrooms']. "ba | " . $property['size'] . " sqft </div></h3>
+                            <h3><div>" . $property['bedrooms'] . " bedrooms | ". $property['bathrooms']. " bathrooms | " . $property['size'] . " sqft </div></h3>
                             <br>
-                            <p>Garden:".$property['garden']."</p>
+                            <p>Garden: ".$property['garden']."</p>
                             <br>
-                            <p>Parking:".$property['parking']."</p>
+                            <p>Parking (sqft): ".$property['parking']."</p>
                             <br>
-                            <p>Stories:".$property['stories']."</p>
+                            <p>Stories: ".$property['stories']."</p>
                             <br>
-                            <p>Basement:".$property['basement']."</p>
+                            <p>Basement: ".$property['basement']."</p>
                             <br>
                             <p>Property Tax: $".$property['tax']."</p>
                         </div>

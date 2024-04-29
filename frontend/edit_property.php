@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $basement = $_POST['basement'];
     $tax = $_POST['tax'];
 
-    // Add validation for other input fields
 
     // Perform database update
     $sql = "UPDATE properties SET ";

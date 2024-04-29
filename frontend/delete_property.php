@@ -19,5 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Deletion failed
         echo "Error deleting property: " . $stmt->error;
     }
+
 }
 ?>
