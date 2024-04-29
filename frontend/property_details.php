@@ -110,27 +110,26 @@
 
             </div>
             <ul>
-                <li><a href="seller.html" class="home">
-                    <span class="icon"><i class="material-icons">home</i></span>
+                <li><a href="index.html" class="home">
+                    <span class="icon"><img style="width: 25px;" src="icons/home.png" alt="Home Icon"></span>
                     <span class="item">Home</span>
                 </a></li>
-                <li><a href="#">
-                    <span class="icon"><i class="material-icons">space_dashboard</i></span>
+                <li><a href="seller.html">
+                    <span class="icon"><img style="width: 25px;" src="icons/dashboard.png" alt="Dashboard Icon"></span>
                     <span class="item">Seller Dashboard</span>
                 </a></li>
-                <li><a href="#">
-                    <span class="icon"><i class="material-icons">person</i></span>
-                    <span class="item">Profile</span>
+                <li><a href="contact.html">
+                    <span class="icon"><img style="width: 25px;" src="icons/support.png" alt="Support Icon"></span>
+                    <span class="item">Contact Support</span>
                 </a></li>
             </ul>
         </div>
         <div class="topbar">
-            <div class="nav">
+        <div class="nav">
                 <div class="menu">
-                    <a href="#" onclick="toggleMenu()"><i class="material-icons">menu</i></a>
+                    <a href="#" onclick="toggleMenu()"><img style="width: 30px;" src="icons/hamburger.png" alt="Menu Icon"></a>
                 </div>
             </div>
-        </div>
 
         <div id="content">
             <?php displayPropertyDetails(); ?>

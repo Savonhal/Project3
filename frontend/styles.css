@@ -98,3 +98,36 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+.container {
+    background-color: rgb(240, 245, 245);
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.container > h3 {
+    font-size: 25px;
+}
+.layout_details {
+    display: flex;
+}
+
+.details {
+    align-items: right;
+    font-size: 25px;
+}
+
+.first {
+    padding-left: 30px;
+    padding-top: 5px;
+}
+
+.second {
+    padding-left: 30px;
+    padding-top: 35px;
+}
+
+
+
+

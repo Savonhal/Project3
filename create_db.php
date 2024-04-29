@@ -12,6 +12,7 @@ if ($conn->connect_error) {
 }
 $sql = "CREATE TABLE properties (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    userID  INT NOT NULL,
     address VARCHAR(255) NOT NULL,
     city VARCHAR(100) NOT NULL,
     state VARCHAR(100) NOT NULL,
